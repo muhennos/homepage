@@ -1,7 +1,9 @@
 name: VPS paivitys
+
 on:
   push:
     branches: [ main ]
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -9,12 +11,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-        fetch-depth: 0
+          fetch-depth: 0
+
       - name: SSH Deploy
         uses: appleboy/ssh-action@master
         with:
-          host: 5.61.91.23
-          username: makaroni
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /var/www/html
