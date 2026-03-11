@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MuhennOS</title>
+  
+  <link rel="stylesheet" href="https://unpkg.com/7.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #663a82; 
+      margin: 0;
+      height: 100vh;
+      overflow: hidden; 
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    header {
+      color: #b491c8;
+      font-size: 80px;
+      font-family: "Comic Relief", system-ui;
+      margin-top: 40px;
+    }
+
+    #window0 {
+      position: absolute;
+      top: 60%;
+      left: 40%;
+      transform: translate(-50%, -50%);
+      height: 400px;
+      width: 300px;
+      font-size: medium;
+      
+      display: flex;
+      flex-direction: column; 
+    }
+
+    #window1 {
+      position: absolute;
+      top: 30%;
+      left: 30%;
+      transform: translate(-50%, -50%);
+      height: 200px;
+      width: 300px;
+      font-size: medium;
+      
+      display: flex;
+      flex-direction: column; 
+    } 
+
+    #window2 {
+      position: absolute;
+      top: 70%;
+      left: 70%;
+      transform: translate(-50%, -50%);
+      height: 200px;
+      width: 300px;
+      font-size: medium;
+      display: flex;
+      flex-direction: column; 
+    }   
+    
+    #header {
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      transform: translate(-50%, -50%);
+    }
+
+    #window-body {
+
+      flex-grow: 1; 
+
+      display: flex;
+      flex-direction: column; 
+      align-items: flex-start;
+      justify-content: flex-start;
+
+    }
+
+    #github-icon {
+      width: 80px;
+      height: 80px;
+    }
+
+
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+    #sossut {
+      display: flex;
+      gap: 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+<div id="header">
+ <header>Makaroni</header>
+</div>
+
+<div id="window0" class="window active">
+  <div class="title-bar">
+    <div class="title-bar-text">Socials</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div id="window-body" class="window-body has-space">
+    <h4>Sossut<h4>
+    
+    <ul id="sossut">
+      <a href="#"><img id="github-icon" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="My Github"></a>
+    </ul>
+
+  </div>
+</div>
+
+<div id="window1" class="window active">
+  <div class="title-bar">
+    <div class="title-bar-text">Socials</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div id="window-body" class="window-body has-space">
+    <p>pl</p>
+    
+    <ul>
+      <li><a href="#">pl</a></li>
+      <li><a href="#">pl</a></li>
+      <li><a href="#">pl</a></li>
+    </ul>
+
+  </div>
+</div>
+
+<div id="window2" class="window active">
+  <div class="title-bar">
+    <div class="title-bar-text">Socials</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div id="window-body" class="window-body has-space">
+    <p>pl</p>
+    
+    <ul>
+      <li><a href="#">pl</a></li>
+      <li><a href="#">pl</a></li>
+      <li><a href="#">pl</a></li>
+    </ul>
+
+  </div>
+</div>
+
+
+</body>
+</html>
