@@ -2,172 +2,266 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MuhennOS</title>
-  
   <link rel="stylesheet" href="https://unpkg.com/7.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;600&display=swap" rel="stylesheet">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MuhennOS</title>
 
   <style>
     body {
-      background-color: #663a82; 
+      background-color: darkolivegreen;
       margin: 0;
-      height: 100vh;
-      overflow: hidden; 
-      font-family: "Segoe UI", Tahoma, sans-serif;
     }
 
-    header {
-      color: #b491c8;
-      font-size: 80px;
-      font-family: "Comic Relief", system-ui;
-      margin-top: 40px;
+    .os-window {
+      position: absolute;
+      transform: translate(-50%, -50%);
     }
 
-    #window0 {
-      position: absolute;
-      top: 60%;
-      left: 40%;
-      transform: translate(-50%, -50%);
-      height: 400px;
-      width: 300px;
-      font-size: medium;
-      
-      display: flex;
-      flex-direction: column; 
+    .title-bar-dark {
+    font-size: large;
     }
 
-    #window1 {
-      position: absolute;
-      top: 30%;
-      left: 30%;
-      transform: translate(-50%, -50%);
-      height: 200px;
-      width: 300px;
-      font-size: medium;
-      
-      display: flex;
-      flex-direction: column; 
-    } 
-
-    #window2 {
-      position: absolute;
-      top: 70%;
-      left: 70%;
-      transform: translate(-50%, -50%);
-      height: 200px;
-      width: 300px;
-      font-size: medium;
-      display: flex;
-      flex-direction: column; 
-    }   
-    
-    #header {
-      position: absolute;
-      top: 5%;
+    #name-window {
+      top: 20%;
       left: 50%;
-      font-size: 24px;
-      font-weight: bold;
-      color: #333;
-      transform: translate(-50%, -50%);
+      width: auto;
+      height: auto;
     }
 
-    #window-body {
+    #nameimg {
+      width: 600px;
+      height: 300px;
+    }
 
-      flex-grow: 1; 
+    #about-window {
+      top: 60%;
+      left: 50%;
+      width: auto;
+    }
 
+    #socials-window {
+      top: 28%;
+      left: 29%;
+      width: 220px;
+    }
+
+    #timetable-ft-window {
+      top: 40%;
+      left: 80%;
+      width: auto; 
+      height: auto;
+      overflow: hidden;  
+    }
+
+    #timetable-ft-window .window-body {
+      width: 560px;
+      height: 700px;
+      padding: 0;
+      background: black;
+    }
+
+    #timetable-ft-iframe {
+      border: none;
+      width: 1600px;
+      height: 2000px;
+      transform: scale(0.35);
+      transform-origin: top left;
+    }
+
+    #timetable-hsl-window {
+      top: 74%;
+      left: 28%;
+      width: auto; 
+      height: auto;
+      overflow: hidden; 
+    }
+
+    #timetable-hsl-iframe {
+      border: none;
+      width: 300px;
+      height: 600px;
+    }
+
+    #rat-window {
+      top: 22%;
+      left: 20%;
+      width: auto; 
+      height: auto;
+      overflow: hidden; 
+    }
+
+    #rat-iframe {
+      border: none;
+      width: 600px;
+      height: 400px;
+    }
+
+    .dark-body {
+      background-color: rgb(31, 31, 31);
+      color: lightgray;
+      padding: 15px;
+      font-family: "Dosis", sans-serif; 
+    }
+
+    .about-content p {
+      font-size: large;
+      margin-top: 0;
+      text-align: center; 
+    }
+
+    .about-content ul {
+      font-size: medium;
+      text-align: left;
+      display: inline-block; 
+      margin: 0 auto;
+    }
+
+    .socials-grid {
       display: flex;
-      flex-direction: column; 
-      align-items: flex-start;
-      justify-content: flex-start;
-
+      flex-wrap: wrap; 
+      gap: 20px; 
+      justify-content: center;
+      align-items: center;
     }
 
-    #github-icon {
-      width: 80px;
-      height: 80px;
+    .socials-grid button {
+      border: none;
+      cursor: pointer;
+      padding: 5px;
+      transition: transform 0.4s ease;
     }
 
-
-    ul {
-      margin-top: 10px;
-      padding-left: 20px;
-    }
-    #sossut {
-      display: flex;
-      gap: 10px;
+    .socials-grid button:hover {
+      transform: scale(1.1);
     }
 
+    .social-icon {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+
+    .link {
+      color: lightblue;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
-
-<div id="header">
- <header>Makaroni</header>
-</div>
-
-<div id="window0" class="window active">
-  <div class="title-bar">
-    <div class="title-bar-text">Socials</div>
-    <div class="title-bar-controls">
-      <button aria-label="Minimize"></button>
-      <button aria-label="Maximize"></button>
-      <button aria-label="Close"></button>
+  <div class="window active os-window" id="name-window">
+    <div class="title-bar title-bar-dark">
+      <div class="title-bar-text">Me!!</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+    </div>
+    <div class="window-body dark-body" style="padding: 0px; pointer-events: none;">
+      <img id="nameimg" src="jokumakaroni.png"  alt="jokumakaroni">
     </div>
   </div>
-  <div id="window-body" class="window-body has-space">
-    <h4>Sossut<h4>
-    
-    <ul id="sossut">
-      <a href="#"><img id="github-icon" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="My Github"></a>
-    </ul>
-
-  </div>
-</div>
-
-<div id="window1" class="window active">
-  <div class="title-bar">
-    <div class="title-bar-text">Socials</div>
-    <div class="title-bar-controls">
-      <button aria-label="Minimize"></button>
-      <button aria-label="Maximize"></button>
-      <button aria-label="Close"></button>
+  <div class="window active os-window" id="about-window">
+    <div class="title-bar title-bar-dark">
+      <div class="title-bar-text">About Me</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+    </div>
+    <div class="window-body dark-body">
+      <div class="about-content">
+        <p>
+          Haiii! <br> 
+          My name is <b>Makaroni</b>, and I'm from Helsinki, Finland.<br> 
+          I like to tinker with computer hardware and other electronics.<br> 
+          I also like the software side of things, but I am still learning!!!<br>
+          This website is my first one, and the code is, well don't look at it!!<br>
+          Some of the content is pretty much just a copy-paste from various places,<br>
+          but most of it is made by me. Have you ever tried scaling an iframe?<br><b>Don't.</b><br>
+          For some reason I like real time data, and if possible self sourcing it,<br>
+          so here's some timetables for the Helsinki Central Railwaystation.<br>
+          in the future, once I finish building my <b><a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Automatic_Dependent_Surveillance%E2%80%93Broadcast">ADSB</a></b> antenna and set up the software,<br>
+          I might add a live feed of planes around eastern Finland and Estonia,<br>
+          but we'll see about that!! (There is a tiny chance that i'll add live <b><a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Air_traffic_control">ATC</a></b> too,<br>
+          if I manage to source the hardware!)
+        </p>
+        <ul>
+          <li><b>MINOR</b></li>
+          <li>Arch btw</li>
+          <li>Pronouns: <b>She/Her</b> preferred (<b>They/Them</b> works too)</li>
+        </ul>
+      </div>
     </div>
   </div>
-  <div id="window-body" class="window-body has-space">
-    <p>pl</p>
-    
-    <ul>
-      <li><a href="#">pl</a></li>
-      <li><a href="#">pl</a></li>
-      <li><a href="#">pl</a></li>
-    </ul>
-
-  </div>
-</div>
-
-<div id="window2" class="window active">
-  <div class="title-bar">
-    <div class="title-bar-text">Socials</div>
-    <div class="title-bar-controls">
-      <button aria-label="Minimize"></button>
-      <button aria-label="Maximize"></button>
-      <button aria-label="Close"></button>
+  <div class="window active os-window" id="socials-window">
+    <div class="title-bar title-bar-dark">
+      <div class="title-bar-text">Socials</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+    </div>
+    <div class="window-body dark-body">
+      <div class="socials-grid">
+        <button onclick="window.open('https://github.com/muhennos', '_blank')">
+          <img class="social-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/960px-Octicons-mark-github.svg.png?20180806170715" alt="GitHub">
+        </button>
+        <button onclick="window.open('https://discord.gg/MZDJYw6B', '_blank')">
+          <img class="social-icon" src="https://images.icon-icons.com/2108/PNG/512/discord_icon_130958.png" alt="Discord">
+        </button>
+        <button onclick="window.open('https://discord.gg/MZDJYw6B', '_blank')">
+          <img class="social-icon" src="https://images.icon-icons.com/2108/PNG/512/discord_icon_130958.png" alt="Discord">
+        </button>
+        <button onclick="window.open('https://discord.gg/MZDJYw6B', '_blank')">
+          <img class="social-icon" src="https://images.icon-icons.com/2108/PNG/512/discord_icon_130958.png" alt="Discord">
+        </button>
+      </div> 
     </div>
   </div>
-  <div id="window-body" class="window-body has-space">
-    <p>pl</p>
-    
-    <ul>
-      <li><a href="#">pl</a></li>
-      <li><a href="#">pl</a></li>
-      <li><a href="#">pl</a></li>
-    </ul>
-
+  <div class="window active os-window" id="timetable-ft-window">
+    <div class="title-bar title-bar-dark">
+      <div class="title-bar-text">Train timetable</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+    </div>
+    <div class="window-body dark-body" style="padding: 0px; pointer-events: none;">
+      <iframe id="timetable-ft-iframe" src="https://junalahdot.fi/helsinki?command=fs&id=47&dt=dep&lang=1&tt=13"></iframe>
+    </div>
   </div>
-</div>
-
-
+  <div class="window active os-window" id="timetable-hsl-window">
+    <div class="title-bar title-bar-dark">
+      <div class="title-bar-text">Train timetable</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+    </div>
+    <div class="window-body dark-body" style="padding: 0px; pointer-events: none;">
+      <iframe id="timetable-hsl-iframe" src="https://omatnaytot.hsl.fi/view?cont=a2lp-FQtgO3Qx5ee7kHm-w=="></iframe>
+    </div>
+  </div> 
+  <div class="window active os-window" id="rat-window">
+    <div class="title-bar title-bar-dark">
+      <div class="title-bar-text">RAT</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
+      </div>
+    </div>
+    <div class="window-body dark-body" style="padding: 0px;">
+      <iframe id="rat-iframe" src="https://spinningrat.online"></iframe>
+    </div>
+  </div> 
 </body>
 </html>

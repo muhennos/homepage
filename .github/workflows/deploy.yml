@@ -1,0 +1,19 @@
+name: VPS paivitys
+on:
+  push:
+    branches: [ main ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: SSH Deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: 5.61.91.23
+          username: makaroni
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /var/www/html
+            git pull origin main
