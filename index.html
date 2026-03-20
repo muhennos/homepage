@@ -1,157 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>MuhennOS</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="https://unpkg.com/7.css">
-  
   <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;600&display=swap" rel="stylesheet">
-  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MuhennOS</title>
 
   <style>
     body {
-      background-color: darkolivegreen;
-      margin: 0;
+        background-image: url('torvaldsbliss.png');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        margin: 0;
+        padding: 20px 0;
+        overflow-x: hidden;
     }
 
     .os-window {
-      position: absolute;
-      transform: translate(-50%, -50%);
-    }
-
-    .title-bar-dark {
-    font-size: large;
-    }
-
-    #name-window {
-      top: 20%;
-      left: 50%;
-      width: auto;
-      height: auto;
-    }
-
-    #nameimg {
-      width: 600px;
-      height: 300px;
-    }
-
-    #about-window {
-      top: 60%;
-      left: 50%;
-      width: auto;
-    }
-
-    #socials-window {
-      top: 28%;
-      left: 29%;
-      width: 220px;
-    }
-
-    #timetable-ft-window {
-      top: 40%;
-      left: 80%;
-      width: auto; 
-      height: auto;
-      overflow: hidden;  
-    }
-
-    #timetable-ft-window .window-body {
-      width: 560px;
-      height: 700px;
-      padding: 0;
-      background: black;
-    }
-
-    #timetable-ft-iframe {
-      border: none;
-      width: 1600px;
-      height: 2000px;
-      transform: scale(0.35);
-      transform-origin: top left;
-    }
-
-    #timetable-hsl-window {
-      top: 74%;
-      left: 28%;
-      width: auto; 
-      height: auto;
-      overflow: hidden; 
-    }
-
-    #timetable-hsl-iframe {
-      border: none;
-      width: 300px;
-      height: 600px;
-    }
-
-    #rat-window {
-      top: 22%;
-      left: 20%;
-      width: auto; 
-      height: auto;
-      overflow: hidden; 
-    }
-
-    #rat-iframe {
-      border: none;
-      width: 600px;
-      height: 400px;
+        margin: 0 auto 20px auto; 
+        width: 90%;
+        max-width: 800px;
     }
 
     .dark-body {
-      background-color: rgb(31, 31, 31);
-      color: lightgray;
-      padding: 15px;
-      font-family: "Dosis", sans-serif; 
+        background-color: rgb(31, 31, 31);
+        color: lightgray;
+        padding: 15px;
+        font-family: "Dosis", sans-serif; 
+    }
+
+    #nameimg {
+        width: 100%;
+        height: auto;
     }
 
     .about-content p {
-      font-size: large;
-      margin-top: 0;
-      text-align: center; 
+        font-size: large;
+        margin-top: 0;
+        text-align: center; 
     }
 
     .about-content ul {
-      font-size: medium;
-      text-align: left;
-      display: inline-block; 
-      margin: 0 auto;
-    }
-
-    .socials-grid {
-      display: flex;
-      flex-wrap: wrap; 
-      gap: 20px; 
-      justify-content: center;
-      align-items: center;
-    }
-
-    .socials-grid button {
-      border: none;
-      cursor: pointer;
-      padding: 5px;
-      transition: transform 0.4s ease;
-    }
-
-    .socials-grid button:hover {
-      transform: scale(1.1);
-    }
-
-    .social-icon {
-      width: 48px;
-      height: 48px;
-      object-fit: contain;
+        font-size: medium;
+        text-align: left;
+        display: inline-block; 
+        margin: 0 auto;
     }
 
     .link {
-      color: lightblue;
-      text-decoration: none;
+        color: lightblue;
+        text-decoration: none;
     }
+
+    .socials-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+
+    .socials-grid button {
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        transition: transform 0.4s ease;
+    }
+
+    .socials-grid button:hover {
+        transform: scale(1.1);
+    }
+
+    .social-icon {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+    }
+
+    #timetable-hsl-iframe {
+        border: none;
+        width: 100%;
+        height: 600px;
+    }
+
+    #rat-iframe {
+        border: none;
+        width: 100%;
+        height: 400px;
+    }
+
   </style>
 </head>
 <body>
-  <div class="window active os-window" id="name-window">
+  <div class="window active os-window">
     <div class="title-bar title-bar-dark">
       <div class="title-bar-text">Me!!</div>
       <div class="title-bar-controls">
@@ -164,7 +107,8 @@
       <img id="nameimg" src="jokumakaroni.png"  alt="jokumakaroni">
     </div>
   </div>
-  <div class="window active os-window" id="about-window">
+
+  <div class="window active os-window">
     <div class="title-bar title-bar-dark">
       <div class="title-bar-text">About Me</div>
       <div class="title-bar-controls">
@@ -184,7 +128,7 @@
           Some of the content is pretty much just a copy-paste from various places,<br>
           but most of it is made by me. Have you ever tried scaling an iframe?<br><b>Don't.</b><br>
           For some reason I like real time data, and if possible self sourcing it,<br>
-          so here's some timetables for the Helsinki Central Railwaystation.<br>
+          so here's a timetable for the Helsinki Central Railwaystation.<br>
           in the future, once I finish building my <b><a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Automatic_Dependent_Surveillance%E2%80%93Broadcast">ADSB</a></b> antenna and set up the software,<br>
           I might add a live feed of planes around eastern Finland and Estonia,<br>
           but we'll see about that!! (There is a tiny chance that i'll add live <b><a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Air_traffic_control">ATC</a></b> too,<br>
@@ -193,12 +137,13 @@
         <ul>
           <li><b>MINOR</b></li>
           <li>Arch btw</li>
-          <li>Pronouns: <b>She/Her</b> preferred (<b>They/Them</b> works too)</li>
+          <li>Pronouns: <b>she/her</b> preferred (<b>they/them</b> works too)</li>
         </ul>
       </div>
     </div>
   </div>
-  <div class="window active os-window" id="socials-window">
+
+  <div class="window active os-window">
     <div class="title-bar title-bar-dark">
       <div class="title-bar-text">Socials</div>
       <div class="title-bar-controls">
@@ -215,29 +160,28 @@
         <button onclick="window.open('https://discord.gg/MZDJYw6B', '_blank')">
           <img class="social-icon" src="https://images.icon-icons.com/2108/PNG/512/discord_icon_130958.png" alt="Discord">
         </button>
-        <button onclick="window.open('https://discord.gg/MZDJYw6B', '_blank')">
-          <img class="social-icon" src="https://images.icon-icons.com/2108/PNG/512/discord_icon_130958.png" alt="Discord">
-        </button>
-        <button onclick="window.open('https://discord.gg/MZDJYw6B', '_blank')">
-          <img class="social-icon" src="https://images.icon-icons.com/2108/PNG/512/discord_icon_130958.png" alt="Discord">
+        <button onclick="window.open('https://www.openstreetmap.org/user/Makaroniinini', '_blank')">
+          <img class="social-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Openstreetmap_logo.svg/1280px-Openstreetmap_logo.svg.png" alt="Open Street Map">
         </button>
       </div> 
     </div>
   </div>
-  <div class="window active os-window" id="timetable-ft-window">
+
+  <div class="window active os-window">
     <div class="title-bar title-bar-dark">
-      <div class="title-bar-text">Train timetable</div>
+      <div class="title-bar-text">RAT</div>
       <div class="title-bar-controls">
         <button aria-label="Minimize"></button>
         <button aria-label="Maximize"></button>
         <button aria-label="Close"></button>
       </div>
     </div>
-    <div class="window-body dark-body" style="padding: 0px; pointer-events: none;">
-      <iframe id="timetable-ft-iframe" src="https://junalahdot.fi/helsinki?command=fs&id=47&dt=dep&lang=1&tt=13"></iframe>
+    <div class="window-body dark-body" style="padding: 0px;">
+      <iframe id="rat-iframe" src="https://spinningrat.online"></iframe>
     </div>
   </div>
-  <div class="window active os-window" id="timetable-hsl-window">
+
+  <div class="window active os-window">
     <div class="title-bar title-bar-dark">
       <div class="title-bar-text">Train timetable</div>
       <div class="title-bar-controls">
@@ -250,18 +194,6 @@
       <iframe id="timetable-hsl-iframe" src="https://omatnaytot.hsl.fi/view?cont=a2lp-FQtgO3Qx5ee7kHm-w=="></iframe>
     </div>
   </div> 
-  <div class="window active os-window" id="rat-window">
-    <div class="title-bar title-bar-dark">
-      <div class="title-bar-text">RAT</div>
-      <div class="title-bar-controls">
-        <button aria-label="Minimize"></button>
-        <button aria-label="Maximize"></button>
-        <button aria-label="Close"></button>
-      </div>
-    </div>
-    <div class="window-body dark-body" style="padding: 0px;">
-      <iframe id="rat-iframe" src="https://spinningrat.online"></iframe>
-    </div>
-  </div> 
+ 
 </body>
 </html>
